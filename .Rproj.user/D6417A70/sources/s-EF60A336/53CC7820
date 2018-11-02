@@ -1,0 +1,29 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1540447606640.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "53CC7820",
+    "lastKnownWriteTime" : 3419473789575321445,
+    "last_content_update" : 1540447606640,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "ECDDBDC1",
+        "caption" : "msq",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=msq&cache_key=ECDDBDC1",
+        "displayedObservations" : "3896",
+        "environment" : "",
+        "object" : "msq",
+        "preview" : "0",
+        "totalObservations" : "3896",
+        "variables" : "92"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

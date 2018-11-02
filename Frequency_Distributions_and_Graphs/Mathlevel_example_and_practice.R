@@ -1,10 +1,13 @@
 #install.packages("dplyr")
 #install.packages("Ecdat")
 #install.packages("psych")
+#install.packages("ggplot2")
 
 library(dplyr)
 library(Ecdat)
 library(flextable)
+library(ggplot2)
+
 
 #################################
 # Exploring the Mathlevel dataset
@@ -41,6 +44,9 @@ flextable(mathlevel_frequency) # A pretty table that can be exported as a pictur
 
 # What is the hightest frequency recorded in the table? What math level is it involved with?
 
+# Let's visualize this with a barplot:
+ggplot(data = Mathlevel, mapping = aes(x = mathlevel)) + geom_bar() 
+
 # Now let's try the same thing with the variable "sat"
 sat_frequency <- Mathlevel %>% count(sat)
 sat_frequency # View the table in the console. "n" is the number of observations
@@ -59,4 +65,7 @@ breaks <- seq(min_sat, max_sat + class_interval_size, by = class_interval_size)
 sat_frequency <- Mathlevel %>% group_by(sat = cut(Mathlevel$sat, breaks,right = FALSE)) %>% count()
 flextable(sat_frequency) # pretty table
 
-# We can also group 
+# Let's visualize this as a frequency polygon 
+ggplot(data = Mathlevel, mapping = aes(x = sat)) + geom_freqpoly(binwidth = class_interval_size)
+
+
