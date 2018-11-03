@@ -1,0 +1,64 @@
+library(dplyr)
+library(Ecdat)
+library(flextable)
+library(ggplot2)
+
+#####################################
+# Practice Problems (with solutions)
+#####################################
+
+#
+# Question 1
+
+# First, we will save the data as a variable in RStudio
+data("Treatment")
+
+# Let's learn what kind of data this is
+?Treatment
+
+# What is the average age of participants
+
+# What is the average real anual earnings in 1974?
+
+# What is the average real anual earnings in 1975?
+
+# What is the average real anual earnings in 1978?
+
+
+# What is the median age of participants
+
+# What is the median real anual earnings in 1974?
+
+# What is the median real anual earnings in 1975?
+
+# What is the median real anual earnings in 1978?
+
+
+# What is the skew age of participants
+
+# What is the skew real anual earnings in 1974?
+
+# What is the skew real anual earnings in 1975?
+
+# What is the skew real anual earnings in 1978?
+
+
+# What is the skew age of participants
+
+# What is the skew real anual earnings in 1974?
+
+# What is the skew real anual earnings in 1975?
+
+# What is the skew real anual earnings in 1978?
+
+
+
+# Plot the distribution of the age of participants
+
+# Plot the distribution of the real anual earnings in 1974?
+
+# Plot the distribution of the real anual earnings in 1975?
+
+# Plot the distribution of the real anual earnings in 1978?
+
+

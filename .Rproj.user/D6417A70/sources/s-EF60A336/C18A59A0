@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1541208662438.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "516179244",
+    "id" : "C18A59A0",
+    "lastKnownWriteTime" : 1541209982,
+    "last_content_update" : 1541209982860,
+    "path" : "~/PsycStatsWorkbook/PsycStatsWorkbook/Treatment_Practice.R",
+    "project_path" : "Treatment_Practice.R",
+    "properties" : {
+        "cursorPosition" : "61,30",
+        "scrollLine" : "40",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
