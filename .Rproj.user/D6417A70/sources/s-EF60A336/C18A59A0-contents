@@ -17,30 +17,37 @@ data("Treatment")
 ?Treatment
 
 # What is the average age of participants
-
+mean(Treatment$age)
 # What is the average real anual earnings in 1974?
-
+mean(Treatment$re74)
 # What is the average real anual earnings in 1975?
-
+mean(Treatment$re75)
 # What is the average real anual earnings in 1978?
-
+mean(Treatment$re78)
 
 # What is the median age of participants
-
+median(Treatment$age)
 # What is the median real anual earnings in 1974?
-
+median(Treatment$re74)
 # What is the median real anual earnings in 1975?
-
+median(Treatment$re75)
 # What is the median real anual earnings in 1978?
+median(Treatment$re78)
+
+Mode <- function(x) {
+  uni <- unique(x)
+  uni[which.max(tabulate(match(x, uni)))]
+}
 
 
-# What is the skew age of participants
+# What is the mode age of participants
+Mode(Treatment$age)
 
-# What is the skew real anual earnings in 1974?
+# What is the mode real anual earnings in 1974?
 
-# What is the skew real anual earnings in 1975?
+# What is the mode real anual earnings in 1975?
 
-# What is the skew real anual earnings in 1978?
+# What is the mode real anual earnings in 1978?
 
 
 # What is the skew age of participants
