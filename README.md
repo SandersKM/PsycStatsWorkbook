@@ -19,8 +19,7 @@ then you will want to install the <span style="color:red">**package**</span> cau
 ```r
 install.packages(package)
 ```
-***
-***
+
 ## Frequency Distributions
 
 #### Example for Frequency Distributions
@@ -175,6 +174,68 @@ e) View the "Neuroticism" data as a histogram. Hint: Replace "geom_freqpoly" in 
 
 [View Solutions](#solutions-for-frequency-distributions)
 ## Central Tendency 
+
+#### Example for Central Tendency
+Load the following libraries in R Studio. 
+```r
+library(dplyr)
+library(Ecdat)
+library(flextable)
+library(ggplot2)
+```
+Refer [here](#no-package) if you get an error when running these lines. 
+
+Throughout this example, we will explore the *Mathlevel* data set. First, we will load the data set into R:
+```r
+data("Mathlevel")
+```
+Now, we will pull up more information about the data set:
+```r
+?Mathlevel
+```
+
+First, let's find the median "sat" score.
+```r
+median(Mathlevel$sat, na.rm = TRUE)
+```
+
+We can also find the mean "sat" score.
+```r
+mean(Mathlevel$sat, na.rm = TRUE)
+```
+Finding the mode is a bit harder. Sadly mode(x) doesn't work. Let's create our own function to find the mode!
+First, we can find all of the unique values
+```r
+uni <- unique(Mathlevel$sat)
+```
+This next method finds the how many times each value shows up and picks the largest
+```r
+uni[which.max(tabulate(match(Mathlevel$sat, uni)))]
+```
+Rather than calling these two complicated functions every time we want to find a mean, let's make a function. Note that the variable Mathlevel$sat is replaced with x
+```r
+Mode <- function(x) {
+  uni <- unique(x)
+  uni[which.max(tabulate(match(x, uni)))]
+}
+```
+Let's find the mode SAT score using our new function!
+```r
+Mode(Mathlevel$sat)
+```
+Looking at the measures of central tendency, how do you think the data will be skewed?
+Now that we have the measures of central tendency, let's view the density plot. 
+```r
+plot(density(Mathlevel$sat), main = "Density of SAT scores")
+```
+
+```r
+
+```
+
+```r
+
+```
 
 
 ## Solutions
