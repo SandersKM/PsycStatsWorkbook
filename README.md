@@ -19,7 +19,8 @@ then you will want to install the <span style="color:red">**package**</span> cau
 ```r
 install.packages(package)
 ```
-
+***
+***
 ## Frequency Distributions
 
 #### Example for Frequency Distributions
@@ -110,7 +111,7 @@ Let's visualize this as a frequency polygon
 ```r
 ggplot(data = Mathlevel, mapping = aes(x = sat)) + geom_freqpoly(binwidth = class_interval_size)
 ```
-
+***
 #### Questions for Frequency Distributions
 
 __MSQ Data__ 
@@ -124,34 +125,53 @@ library(ggplot2)
 Load the "msq" data. Remember, if you are confused, refer to the [example](#example-for-frequence-distributions).
 
 _Question 1_: 
-_a)_ What does MSQ stand for?
-_b)_ Write down the scale used in this questionaire.
-_c)_ How many rows are in this dataset?
+
+a) What does MSQ stand for?
+
+b) Write down the scale used in this questionaire.
+
+c) How many rows are in this dataset?
 
 _Question 2_: 
-_a)_ Make a frequency table using the variable "sad"
-_b)_ The numeric scale won't mean much to readers. Change the column "sad" to a vector of strings using the following command
+
+a) Make a frequency table using the variable "sad"
+
+b) The numeric scale won't mean much to readers. Change the column "sad" to a vector of strings using the following command
 ```r
 sad_frequency$sad <- c("Not at all", "A little", "Moderately", "Very Much", "NA")
 ```
-_c)_ How many participants said that they were not at all sad?
-_d)_ How many participants didn't answer this question (NA)?
-_e)_ Create a barplot showing the reponses for "sad". Can you figure out how to change the y-axis label?
+
+c) How many participants said that they were not at all sad?
+
+d) How many participants didn't answer this question (NA)?
+
+e) Create a barplot showing the reponses for "sad". Can you figure out how to change the y-axis label?
 
 _Question 3_:
-_a)_ Make a frequency table using the variable "happy"
-_b)_ The numeric scale won't mean much to readers. Change the labels; see Question 5.b for help. 
-_c)_ How many participants said that they were not at all happy?
-_d)_ How many participants didn't answer this question (NA)?
-_e)_ Create a barplot showing the reponses for "happy". Can you figure out how to change the y-axis label?
-_f)_ What kind of distribution is this?
+
+a) Make a frequency table using the variable "happy"
+
+b) The numeric scale won't mean much to readers. Change the labels; see Question 5.b for help. 
+
+c) How many participants said that they were not at all happy?
+
+d) How many participants didn't answer this question (NA)?
+
+e) Create a barplot showing the reponses for "happy". Can you figure out how to change the y-axis label?
+
+f) What kind of distribution is this?
 
 _Question 4_:
-_a)_ Find the minimum and maximum of the variable "Neuroticism". Remember to save the values as variables in R!
-_b)_ Create variable for the Neuroticism interval size, which should equal 5.
-_c)_ Using this information, set "breaks" for the intervals and then cut the continuous data into "class_intervals". Remeber the example is there for reference!
-_d)_ View the "Neuroticism" data as a barplot.
-_e)_ View the "Neuroticism" data as a histogram. Hint: Replace "geom_freqpoly" in the previous command with "geom_histogram".
+
+a) Find the minimum and maximum of the variable "Neuroticism". Remember to save the values as variables in R!
+
+b) Create variable for the Neuroticism interval size, which should equal 5.
+
+c) Using this information, set "breaks" for the intervals and then cut the continuous data into "class_intervals". Remeber the example is there for reference!
+
+d) View the "Neuroticism" data as a barplot.
+
+e) View the "Neuroticism" data as a histogram. Hint: Replace "geom_freqpoly" in the previous command with "geom_histogram".
 
 [View Solutions](#solutions-for-frequency-distributions)
 ## Central Tendency 
