@@ -41,10 +41,10 @@ Now, we will pull up more information about the data set:
 ?Mathlevel
 ```
 Answer the following questions:
-1. Where and when was this data recorded?
+1. Where and when were these data recorded?
 2. List the variables for student majors and what they stand for.
-3. What does the variable "sat" mean? Is it continuous, categorical, or ordinal?
-4. What does the variable "mathlevel" mean? Is it continuous, categorical, or ordinal?
+3. What does the variable "sat" mean? Is it continuous, discrete, categorical, or ordinal?
+4. What does the variable "mathlevel" mean? Is it continuous, discrete, categorical, or ordinal?
 
 We can actually see the levels of "mathlevel" in the console:
 ```r
@@ -56,9 +56,12 @@ Now, let's see how many rows are in *Mathlevel*
 nrow(Mathlevel)
 ## [1] 609
 ```
-Now we are ready to make a frequency table using the variable "mathlevel". First we will make a table and view it in the console.
+Now we are ready to make a frequency table using the variable "mathlevel". This step saves the table as a variable called "mathlevel_frequency"
 ```r
-mathlevel_frequency <- Mathlevel %>% count(mathlevel)
+mathlevel_frequency <- Mathlevel %>% count(mathlevel) 
+```
+Now choose a method for displaying your table. The first will display the table in the console.
+```r
 mathlevel_frequency # View the table in the console. "n" is the number of observations
 ### A tibble: 7 x 2
 ##  mathlevel     n
@@ -71,17 +74,24 @@ mathlevel_frequency # View the table in the console. "n" is the number of observ
 ## 6 221a         31
 ## 7 221b         84
 ```
-The <ord> below "mathlevel" shows that this variable is ordinal. The <int> below "n" shows that this variable is an integer. Note that "n" represents the frequency. What is the highest frequency recorded in the table? 
+\\ Make sure ord shows up!!!
+The "<ord>" below "mathlevel" shows that this variable is ordinal. The <int> below "n" shows that this variable is an integer. Note that "n" represents the frequency. 
 
-You can also view this frequency table in a table in a separate window or as a image in Viewer using the code below.
+You can also view this frequency table in a table in a separate window. 
 ```r
 View(mathlevel_frequency) # View the table in a data window
+```
+There is also an option to display the the table as a nice image in Viewer using the code below.
+```r
 flextable(mathlevel_frequency) # A pretty table that can be exported as a picture
 ```
 To export the flextable shown in Viewer, click "Export", then "Save as Image..."
 (Insert photo!)
 
+Now that we have displayed the frequency table, what is the highest frequency recorded? 
+
 We can also view this data as a barplot.
+\\ Insert a sidebar or something so people can learn more about unapparent code. 
 ```r
 ggplot(data = Mathlevel, mapping = aes(x = mathlevel)) + geom_bar() 
 ```
@@ -106,6 +116,7 @@ breaks <- seq(min_sat, max_sat + class_interval_size, by = class_interval_size)
 sat_frequency <- Mathlevel %>% group_by(sat = cut(Mathlevel$sat, breaks,right = FALSE)) %>% count()
 flextable(sat_frequency) # pretty table
 ```
+\\ This is overfilling the box
 Let's visualize this as a frequency polygon 
 ```r
 ggplot(data = Mathlevel, mapping = aes(x = sat)) + geom_freqpoly(binwidth = class_interval_size)
@@ -122,7 +133,8 @@ library(flextable)
 library(ggplot2)
 ```
 Load the "msq" data. Remember, if you are confused, refer to the [example](#example-for-frequency-distributions).
-
+\\ Change Question to Practice Problems
+\\ Change Example to Tutorial
 _Question 1_: 
 
 a) What does MSQ stand for?
@@ -135,7 +147,7 @@ _Question 2_:
 
 a) Make a frequency table using the variable "sad"
 
-b) The numeric scale won't mean much to readers. Change the column "sad" to a vector of strings using the following command
+b) The numeric scale won't mean much to readers. Change the column labels for "sad" from numbers to the labels associated with those numbers using the following command
 ```r
 sad_frequency$sad <- c("Not at all", "A little", "Moderately", "Very Much", "NA")
 ```
@@ -150,7 +162,7 @@ _Question 3_:
 
 a) Make a frequency table using the variable "happy"
 
-b) The numeric scale won't mean much to readers. Change the labels; see Question 5.b for help. 
+b) The numeric scale won't mean much to readers. Change the labels again; see Question 5.b for help. 
 
 c) How many participants said that they were not at all happy?
 
@@ -158,7 +170,7 @@ d) How many participants didn't answer this question (NA)?
 
 e) Create a barplot showing the reponses for "happy". Can you figure out how to change the y-axis label?
 
-f) What kind of distribution is this?
+f) Describe the distribution.
 
 _Question 4_:
 
@@ -203,16 +215,19 @@ We can also find the mean "sat" score.
 ```r
 mean(Mathlevel$sat, na.rm = TRUE)
 ```
-Finding the mode is a bit harder. Sadly mode(x) doesn't work. Let's create our own function to find the mode!
-First, we can find all of the unique values
+Finding the mode is a bit harder. ?? Sadly mode(x) doesn't return what we think of as a mode. Let's create our own function to find the mode!
+First, we can find all of the unique values \\ explain what a unique value is.. Give an example with a small array/dataset
 ```r
 uni <- unique(Mathlevel$sat)
 ```
 This next method finds the how many times each value shows up and picks the largest
+\\ have a sentance that breaks down this function
 ```r
 uni[which.max(tabulate(match(Mathlevel$sat, uni)))]
 ```
 Rather than calling these two complicated functions every time we want to find a mean, let's make a function. Note that the variable Mathlevel$sat is replaced with x
+\\have dummy function in the example
+\\ Explain that captilization matters in R
 ```r
 Mode <- function(x) {
   uni <- unique(x)
@@ -225,6 +240,8 @@ Mode(Mathlevel$sat)
 ```
 Looking at the measures of central tendency, how do you think the data will be skewed?
 Now that we have the measures of central tendency, let's view the density plot. 
+
+\\ maybe explain densidty plot
 ```r
 plot(density(Mathlevel$sat), main = "Density of SAT scores")
 ```
