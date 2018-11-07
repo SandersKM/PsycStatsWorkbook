@@ -121,7 +121,7 @@ library(psych)
 library(flextable)
 library(ggplot2)
 ```
-Load the "msq" data. Remember, if you are confused, refer to the [example](#example-for-frequence-distributions).
+Load the "msq" data. Remember, if you are confused, refer to the [example](#example-for-frequency-distributions).
 
 _Question 1_: 
 
@@ -228,17 +228,77 @@ Now that we have the measures of central tendency, let's view the density plot.
 ```r
 plot(density(Mathlevel$sat), main = "Density of SAT scores")
 ```
+***
+#### Questions for Central Tendency
 
+__Treatment Data__ 
+The libraries you will need for these questions.
 ```r
-
+library(dplyr)
+library(psych)
+library(flextable)
+library(ggplot2)
 ```
+Load the "Treatment" data. Remember, if you are confused, refer to the [example](#example-for-frequency-distributions).
 
-```r
+_Question 1_: 
 
-```
+a) What is the mean age of participants?
 
+b) What is the median age of participants?
+
+c) What is the mode age of participants?
+
+d) Calculate the skew of the age of participants.
+
+e) Plot the distribution of the age of participants.
+
+
+_Question 1_: 
+
+a) What is the mean age of the real anual earnings of participants in 1974?
+
+b) What is the median age of the real anual earnings of participants in 1974?
+
+c) What is the mode age of the real anual earnings of participants in 1974?
+
+d) Calculate the skew of the real anual earnings of participants in 1974.
+
+e) Plot the distribution of the real anual earnings of participants in 1974.
+
+
+_Question 3_: 
+
+a) What is the mean age of the real anual earnings of participants in 1975?
+
+b) What is the median age of the real anual earnings of participants in 1975?
+
+c) What is the mode age of the real anual earnings of participants in 1975?
+
+d) Calculate the skew of the real anual earnings of participants in 1975.
+
+e) Plot the distribution of the real anual earnings of participants in 1975.
+
+
+_Question 4_: 
+
+a) What is the mean age of the real anual earnings of participants in 1978?
+
+b) What is the median age of the real anual earnings of participants in 1978?
+
+c) What is the mode age of the real anual earnings of participants in 1978?
+
+d) Calculate the skew of the real anual earnings of participants in 1978.
+
+e) Plot the distribution of the real anual earnings of participants in 1978.
+
+[View Solutions](#solutions-for-central-tendency)
 
 ## Solutions
 
 #### Solutions for Frequency Distributions
 [Go back to questions](#questions-for-frequency-distributions)
+
+#### Solutions for Central Tendency
+[Go back to questions](#questions-for-central-tendency)
+
