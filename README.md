@@ -187,7 +187,7 @@ e) View the "Neuroticism" data as a histogram. Hint: Replace "geom_freqpoly" in 
 [View Solutions](#solutions-for-frequency-distributions)
 ## Central Tendency 
 
-#### Example for Central Tendency
+#### Tutorial for Central Tendency
 Load the following libraries in R Studio. 
 ```r
 library(dplyr)
@@ -245,8 +245,10 @@ Now that we have the measures of central tendency, let's view the density plot.
 ```r
 plot(density(Mathlevel$sat), main = "Density of SAT scores")
 ```
+
+\\ need to do something for weighted mean
 ***
-#### Questions for Central Tendency
+#### Practice Problems for Central Tendency
 
 __Treatment Data__ 
 The libraries you will need for these questions.
@@ -311,11 +313,79 @@ e) Plot the distribution of the real anual earnings of participants in 1978.
 
 [View Solutions](#solutions-for-central-tendency)
 
+## Variation 
+
+#### Tutorial for Variation
+
+For this example, we will use the Mathlevel dataset again.
+```r
+library(dplyr)
+library(Ecdat)
+library(flextable)
+library(ggplot2)
+data("Mathlevel")
+```
+First let's get the minimum and maximum SAT scores in this dataset
+```r
+sat_range <- range(Mathlevel$sat)
+```
+Now we can find the difference between the minimum and maximum values
+```r
+diff(sat_range)
+```
+We would also like to know the IQR of this data, which can be found using a simple function
+```r
+IQR(Mathlevel$sat)
+```
+Now let's find the variation:
+```r
+var(Mathlevel$sat)
+```
+Before we call the function for variance, let's look at its documentation
+```r
+?sd
+```
+Go to the Details section. What denoninator is used in this function?
+Now that we know this is the function we want, let's get the standard deveation
+```r
+sd(Mathlevel$sat)
+```
+
+***
+#### Practice Problems for Variation
+
+__Treatment Data__ 
+The libraries you will need for these questions.
+```r
+library(dplyr)
+library(psych)
+library(flextable)
+library(ggplot2)
+```
+Load the "Treatment" data. Each question will state the variable for analysis. Remember, if you don't remember the the name for the variable described, use the help documentation for the dataset. For each variable, find the following values:
+a) Minimum and maximum value
+b) Range
+c) IQR
+d) Variance
+e) Standard Deviation
+
+_Practice Problem 1_: Participant age
+
+_Practice Problem 2_: Years of education
+
+
+
+## Central Tendency
+
+#### Example for Central Tendency
+
+
+
 ## Solutions
 
 #### Solutions for Frequency Distributions
 [Go back to questions](#questions-for-frequency-distributions)
 
 #### Solutions for Central Tendency
-[Go back to questions](#questions-for-central-tendency)
+[Go back to questions](#practice-problems-for-central-tendency)
 
