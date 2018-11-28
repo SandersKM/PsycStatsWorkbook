@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1543357606131.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3188115548",
+    "id" : "96657F63",
+    "lastKnownWriteTime" : 1543375564,
+    "last_content_update" : 1543375564075,
+    "path" : "~/PsycStatsWorkbook/PsycStatsWorkbook/Variation/Treatment_example.R",
+    "project_path" : "Variation/Treatment_example.R",
+    "properties" : {
+        "cursorPosition" : "61,4",
+        "scrollLine" : "44",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

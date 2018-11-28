@@ -44,10 +44,13 @@ Mode <- function(x) {
 Mode(Treatment$age)
 
 # What is the mode real anual earnings in 1974?
+Mode(Treatment$re74)
 
 # What is the mode real anual earnings in 1975?
+Mode(Treatment$re75)
 
 # What is the mode real anual earnings in 1978?
+Mode(Treatment$re78)
 
 
 # What is the skew age of participants
