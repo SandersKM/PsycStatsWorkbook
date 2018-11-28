@@ -5,7 +5,7 @@
 1. [Introduction](#introduction)
 2. [Frequency Distributions](#frequency-distributions)
 3. [Central Tendency](#central-tendency)
-4. Variability
+4. [Variability](#variability)
 5. [Solutions](#solutions)
 
 ## Introduction 
@@ -351,6 +351,8 @@ Now that we know this is the function we want, let's get the standard deveation
 sd(Mathlevel$sat)
 ```
 
+\\ Put in something with graphing!
+
 ***
 #### Practice Problems for Variation
 
@@ -373,12 +375,48 @@ _Practice Problem 1_: Participant age
 
 _Practice Problem 2_: Years of education
 
+_Practice Problem 3_: Real annual earnings in 1974
+
+_Practice Problem 4_: Real annual earnings in 1975
+
+_Practice Problem 5_: Real annual earnings in 1978
+
+## Descriptive Statistics
+
+#### Example for Descriptive Statistics
+For this example, we will use the Mathlevel dataset again.
+```r
+library(dplyr)
+library(Ecdat)
+library(flextable)
+library(ggplot2)
+data("Mathlevel")
+```
+
+Making a boxplot is easy in R; just state the variable, y axis label, and Title (main) for the plot.
+```r
+sat_box <- boxplot(Mathlevel$sat, ylab = "SAT Score", main = "Student SAT Scores")
+```
+// Insert image
+This variable contains lots of information to make the graph. Look at the boxplot documentation, particularly the "Values" section.
+```r
+?boxplot
+```
+Each of these values can be accessed directly from the variable. For intance, let's find all of the outliers:
+```r
+sat_box$out
+#  [1] 430 460 480 400 460 440 480 440 480 780 780 790 780 780 770
+```
 
 
-## Central Tendency
+```r
 
-#### Example for Central Tendency
+```
 
+
+```r
+
+```
 
 
 ## Solutions
