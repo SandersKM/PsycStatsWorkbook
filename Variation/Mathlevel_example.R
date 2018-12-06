@@ -24,19 +24,7 @@ var(Mathlevel$sat)
 # Let's find the standard deviations
 sd(Mathlevel$sat)
 
-# Let's make a boxplot with the data
-sat_box <- boxplot(Mathlevel$sat)
-sat_box
 
-# Now let's find the range of values
-range_sat <- max(Mathlevel$sat) - min(Mathlevel$sat) 
-# Look at the Help box, and scroll down to the Value section.
-?boxplot
-# Let's look at the Quartile values
-summary(Mathlevel$sat)
-# The IQR is just 
-IQR(Mathlevel$sat)
-# We can also get a list of all of the outlier values
-sat_box$out
+
 
 
