@@ -154,7 +154,7 @@ c) How many participants said that they were not at all sad?
 
 d) How many participants didn't answer this question (NA)?
 
-e) Create a barplot showing the reponses for "sad". Can you figure out how to change the y-axis label?
+e) Create a barplot showing the reponses for "sad".
 
 _Problem 3_:
 
@@ -164,9 +164,9 @@ b) The numeric scale won't mean much to readers. Change the labels again; see Qu
 
 c) How many participants said that they were not at all happy?
 
-d) How many participants didn't answer this question (NA)?
+d) How many participants said that they were at least moderatly happy?
 
-e) Create a barplot showing the reponses for "happy". Can you figure out how to change the y-axis label?
+e) Create a barplot showing the reponses for "happy". 
 
 f) Describe the distribution.
 
@@ -446,6 +446,86 @@ sat_box$out
 #### Solutions for Frequency Distributions
 [Go back to questions](#practice-problems-for-frequency-distributions)
 
+_Problem 1_
+
+a) Motivtional States Questionnaire
+
+b) 0 = Not at all, 1= A little, 2 = Moderately, 3 = Very Much
+
+c) 3896
+
+_Problem 2_
+
+a)
+
+| sad|    n|
+|---:|----:|
+|   0| 2825|
+|   1|  839|
+|   2|  169|
+|   3|   53|
+|  NA|   10|
+
+b)
+
+c) 2825
+
+d) 10
+
+e)
+
+_Problem 3_
+
+a) 
+
+| happy|    n|
+|-----:|----:|
+|     0| 1016|
+|     1| 1356|
+|     2| 1128|
+|     3|  380|
+|    NA|   16|
+
+b) 
+```r
+sad_frequency$sad <- c("Not at all", "A little", "Moderately", "Very Much", "NA")
+```
+
+c) 1016
+
+d) 1228 + 380 = 1608
+
+e) 
+
+_Question 4_
+
+a)
+```r
+min_Neuroticism <- min(msq$Neuroticism, na.rm = TRUE)
+max_Neuroticism <- max(msq$Neuroticism, na.rm = TRUE)
+```
+
+b)
+```r
+Neuroticism_interval_size <- 5
+```
+
+c)
+```r
+breaks <- seq(min_Neuroticism, max_Neuroticism + Neuroticism_interval_size, by = Neuroticism_interval_size)
+Neuroticism_frequency <- msq %>% group_by(Neuroticism = cut(msq$Neuroticism, breaks,right = FALSE)) %>% count()
+flextable(Neuroticism_frequency)
+```
+
+d)
+```r
+ggplot(data = msq, mapping = aes(x =Neuroticism )) + geom_freqpoly(binwidth = Neuroticism_interval_size, na.rm = TRUE)
+```
+
+e)
+```r
+ggplot(data = msq, mapping = aes(x =Neuroticism )) + geom_histogram(binwidth = Neuroticism_interval_size, na.rm = TRUE)
+```
 
 
 #### Solutions for Central Tendency
