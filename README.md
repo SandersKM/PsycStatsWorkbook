@@ -22,7 +22,7 @@ install.packages(package)
 
 ## Frequency Distributions
 
-#### Example for Frequency Distributions
+#### Tutorial for Frequency Distributions
 Load the following libraries in R Studio. 
 ```r
 library(dplyr)
@@ -74,8 +74,7 @@ mathlevel_frequency # View the table in the console. "n" is the number of observ
 ## 6 221a         31
 ## 7 221b         84
 ```
-\\ Make sure ord shows up!!!
-The "<ord>" below "mathlevel" shows that this variable is ordinal. The <int> below "n" shows that this variable is an integer. Note that "n" represents the frequency. 
+The "ord" below "mathlevel" shows that this variable is ordinal. The "int" below "n" shows that this variable is an integer. Note that "n" represents the frequency. 
 
 You can also view this frequency table in a table in a separate window. 
 ```r
@@ -122,7 +121,7 @@ Let's visualize this as a frequency polygon
 ggplot(data = Mathlevel, mapping = aes(x = sat)) + geom_freqpoly(binwidth = class_interval_size)
 ```
 ***
-#### Questions for Frequency Distributions
+#### Practice Problems for Frequency Distributions
 
 __MSQ Data__ 
 The libraries you will need for these questions.
@@ -133,9 +132,8 @@ library(flextable)
 library(ggplot2)
 ```
 Load the "msq" data. Remember, if you are confused, refer to the [example](#example-for-frequency-distributions).
-\\ Change Question to Practice Problems
-\\ Change Example to Tutorial
-_Question 1_: 
+
+_Problem 1_: 
 
 a) What does MSQ stand for?
 
@@ -143,7 +141,7 @@ b) Write down the scale used in this questionaire.
 
 c) How many rows are in this dataset?
 
-_Question 2_: 
+_Problem 2_: 
 
 a) Make a frequency table using the variable "sad"
 
@@ -158,7 +156,7 @@ d) How many participants didn't answer this question (NA)?
 
 e) Create a barplot showing the reponses for "sad". Can you figure out how to change the y-axis label?
 
-_Question 3_:
+_Problem 3_:
 
 a) Make a frequency table using the variable "happy"
 
@@ -172,7 +170,7 @@ e) Create a barplot showing the reponses for "happy". Can you figure out how to 
 
 f) Describe the distribution.
 
-_Question 4_:
+_Problem 4_:
 
 a) Find the minimum and maximum of the variable "Neuroticism". Remember to save the values as variables in R!
 
@@ -284,7 +282,7 @@ library(ggplot2)
 ```
 Load the "Treatment" data. Remember, if you are confused, refer to the [example](#example-for-frequency-distributions).
 
-_Question 1_: 
+_Problem 1_: 
 
 a) What is the mean age of participants?
 
@@ -297,7 +295,7 @@ d) Calculate the skew of the age of participants.
 e) Plot the distribution of the age of participants.
 
 
-_Question 1_: 
+_Problem 1_: 
 
 a) What is the mean age of the real anual earnings of participants in 1974?
 
@@ -310,7 +308,7 @@ d) Calculate the skew of the real anual earnings of participants in 1974.
 e) Plot the distribution of the real anual earnings of participants in 1974.
 
 
-_Question 3_: 
+_Problem 3_: 
 
 a) What is the mean age of the real anual earnings of participants in 1975?
 
@@ -323,7 +321,7 @@ d) Calculate the skew of the real anual earnings of participants in 1975.
 e) Plot the distribution of the real anual earnings of participants in 1975.
 
 
-_Question 4_: 
+_Problem 4_: 
 
 a) What is the mean age of the real anual earnings of participants in 1978?
 
@@ -395,15 +393,15 @@ c) IQR
 d) Variance
 e) Standard Deviation
 
-_Practice Problem 1_: Participant age
+_Problem 1_: Participant age
 
-_Practice Problem 2_: Years of education
+_Problem 2_: Years of education
 
-_Practice Problem 3_: Real annual earnings in 1974
+_Problem 3_: Real annual earnings in 1974
 
-_Practice Problem 4_: Real annual earnings in 1975
+_Problem 4_: Real annual earnings in 1975
 
-_Practice Problem 5_: Real annual earnings in 1978
+_Problem 5_: Real annual earnings in 1978
 
 ## Descriptive Statistics
 
@@ -446,7 +444,9 @@ sat_box$out
 ## Solutions
 
 #### Solutions for Frequency Distributions
-[Go back to questions](#questions-for-frequency-distributions)
+[Go back to questions](#practice-problems-for-frequency-distributions)
+
+
 
 #### Solutions for Central Tendency
 [Go back to questions](#practice-problems-for-central-tendency)
