@@ -205,29 +205,53 @@ Now, we will pull up more information about the data set:
 ```r
 ?Mathlevel
 ```
-
-First, let's find the median "sat" score.
+First, let's get subsets of "sat" scores for students who have and have not taken a language class
 ```r
-median(Mathlevel$sat, na.rm = TRUE)
+language_sat <- Mathlevel$sat[which(Mathlevel$language == "yes")]
+no_language_sat <- Mathlevel$sat[which(Mathlevel$language == "no")]
+```
+Now, we can calculate the mean "sat" score for each group
+
+```r
+mean(no_language_sat)
+# 623.2468
+mean(language_sat)
+# 637.1429
+```
+In order to find the combined mean, we can use a weighted mean based on each group's size and average "sat" score. 
+To do that, we will create a vector with the group means and another vector with the group sizes. Then, we can call
+the weighted.mean function with the two lists
+
+```r
+group_means <- c(mean(language_sat), mean(no_language_sat))
+group_lengths <- c(length(language_sat), lenght(no_language_sat))
+group_means <- c(mean(language_sat), mean(no_language_sat))
+# 624.844
 ```
 
-We can also find the mean "sat" score.
+We can check the results for our weighted "sat" score mean.
 ```r
 mean(Mathlevel$sat, na.rm = TRUE)
+# 624.844
 ```
-Finding the mode is a bit harder. ?? Sadly mode(x) doesn't return what we think of as a mode. Let's create our own function to find the mode!
-First, we can find all of the unique values \\ explain what a unique value is.. Give an example with a small array/dataset
+
+Now let's find the median "sat" score.
+```r
+median(Mathlevel$sat, na.rm = TRUE)
+# 630
+```
+
+R does not have an inbuilt function for finding the mode. Let's create our own function to find the mode!
+First, we can find all of the unique values. In the list (1,2,3,3,4,5,5,5), the unique values are (1,2,3,4,5)
 ```r
 uni <- unique(Mathlevel$sat)
 ```
-This next method finds the how many times each value shows up and picks the largest
-\\ have a sentance that breaks down this function
+This next method finds the how many times each value shows up and picks the largest. Like with in math, read this function from the most nested parentheses outward. We are sending the Mathlevel$sat scores and matching them to the indexes of the unique scores we identified above. Then we are counting how many of each score there is using tabulate(). We use which.max to find the most common score index. We find the score at that index using uni[index].
 ```r
 uni[which.max(tabulate(match(Mathlevel$sat, uni)))]
+# 620
 ```
-Rather than calling these two complicated functions every time we want to find a mean, let's make a function. Note that the variable Mathlevel$sat is replaced with x
-\\have dummy function in the example
-\\ Explain that captilization matters in R
+Rather than calling these two complicated functions every time we want to find a mode, let's make a function. Note that the variable Mathlevel$sat is replaced with x. 
 ```r
 Mode <- function(x) {
   uni <- unique(x)
@@ -237,16 +261,16 @@ Mode <- function(x) {
 Let's find the mode SAT score using our new function!
 ```r
 Mode(Mathlevel$sat)
+# 620 
 ```
 Looking at the measures of central tendency, how do you think the data will be skewed?
 Now that we have the measures of central tendency, let's view the density plot. 
 
-\\ maybe explain densidty plot
+\\ maybe explain density plot
 ```r
 plot(density(Mathlevel$sat), main = "Density of SAT scores")
 ```
 
-\\ need to do something for weighted mean
 ***
 #### Practice Problems for Central Tendency
 
