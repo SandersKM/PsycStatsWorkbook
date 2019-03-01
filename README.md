@@ -387,6 +387,9 @@ ggplot(means_language) +
   geom_errorbar( aes(x=language, ymin=mean-sd, ymax=mean+sd), width=0.4, colour="orange", alpha=0.9, size=1.3)
 ```
 
+<img src="https://github.com/SandersKM/PsycStatsWorkbook/blob/master/figures/satMeanSd_byLanguage.png"
+     alt="Markdown Monster icon"
+     style="float: left; margin-right: 10px;" />
 ***
 #### Practice Problems for Variation
 
