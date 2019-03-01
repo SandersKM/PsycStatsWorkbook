@@ -373,7 +373,19 @@ Now that we know this is the function we want, let's get the standard deveation
 sd(Mathlevel$sat)
 ```
 
-\\ Put in something with graphing!
+We can also find the mean and standard deviation by group using a pipline of dplyr commands.
+```r
+# State dataset, group by language, and summarize the sat mean and standard deviation per group
+means_language = Mathlevel %>% group_by(language) %>% summarize_at(vars(sat), funs(mean, sd))
+means_language # print out result
+```
+We can also plot these means in a bar graph with error bars using ggplot2.
+```r
+# declare the grouped mean table created above, plot a bar graph, and add error bars
+ggplot(means_language) +
+  geom_bar( aes(x=language, y=mean), stat="identity", fill="skyblue", alpha=0.7) +
+  geom_errorbar( aes(x=language, ymin=mean-sd, ymax=mean+sd), width=0.4, colour="orange", alpha=0.9, size=1.3)
+```
 
 ***
 #### Practice Problems for Variation
