@@ -432,28 +432,90 @@ data("Mathlevel")
 
 Making a boxplot is easy in R; just state the variable, y axis label, and Title (main) for the plot.
 ```r
-sat_box <- boxplot(Mathlevel$sat, ylab = "SAT Score", main = "Student SAT Scores")
+boxplot(Mathlevel$sat, ylab = "SAT Score", main = "Student SAT Scores")
 ```
 // Insert image
-This variable contains lots of information to make the graph. Look at the boxplot documentation, particularly the "Values" section.
+
+If we save the boxplot as a variable, we can actually extract several important statistics, like the outliers and quarties.
 ```r
-?boxplot
-```
-Each of these values can be accessed directly from the variable. For intance, let's find all of the outliers:
-```r
-sat_box$out
+sat_box <- boxplot(Mathlevel$sat, ylab = "SAT Score", main = "Student SAT Scores")
+sat_box$out # Get just outliers
 #  [1] 430 460 480 400 460 440 480 440 480 780 780 790 780 780 770
+sat_box # get all of the variable's statistics
+# $`stats`
+#      [,1]
+# [1,]  490
+# [2,]  590
+# [3,]  630
+# [4,]  660
+# [5,]  750
+# attr(,"class")
+#          
+# "integer"
+#
+#
+# $n
+# [1] 609
+#
+# $conf
+#          [,1]
+# [1,] 625.5183
+# [2,] 634.4817
+#
+# $out
+#  [1] 430 460 480 400 460 440 480 440 480 780 780 790 780 780 770
+#
+# $group
+#  [1] 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+#
+# $names
+# [1] ""
 ```
 
-
+We can also create side-by side boxplots to show group differences.
 ```r
-
+boxplot(Mathlevel$sat[which(Mathlevel$language == "yes")], Mathlevel$sat[which(Mathlevel$language == "no")],
+        names = c("Language","No Language"), ylab = "SAT Score", main = "Student SAT Scores")
 ```
 
-
+To get a better idea of the difference between means, let's find a package to calculate the Effect Size Index, _d_. A quick Google search pulls up several options. We will use _effsize_ here, but feel free to compare the results with a different package!
 ```r
-
+install.packages("effsize") #install package
+library(effsize) # load package
+cohen.d(Mathlevel$sat[which(Mathlevel$language == "yes")], Mathlevel$sat[which(Mathlevel$language == "no")])
+# Cohen's d
+#
+# d estimate: 0.2337049 (small)
+# 95 percent confidence interval:
+#       lower       upper 
+# -0.01614697  0.48355676 
 ```
+
+#### Practice Problems for Descriptive Statistics
+
+__Treatment Data__ 
+The libraries you will need for these questions. Be sure to correctly label all plots!
+```r
+library(effsize)
+data("Treatment")
+```
+_Problem 1_: Create a boxplot of participant education. List the outliers.
+
+_Problem 2_: Create a boxplot of participant age. List the minimum, maximum, and the median.
+
+_Problem 3_: Create a boxplot that shows the real anual earnings of participants in 1974, 1975, and 1978
+
+_Problem 4_: Calculate the following Effect Size indexes
+
+(a) Between earnings in 1974 and 1975
+(b) Between earnings in 1974 and 1978
+(c) Between earnings in 1975 and 1978
+
+_Problem 5_: Create a boxplot comparing 1978 participant earnings of those who are married and unmarried. 
+
+_Problem 6_: Calculate the Effect Size Index between 1978 participant earnings of those who are married and unmarried.
+
+
 
 
 ## Solutions
@@ -546,3 +608,82 @@ ggplot(data = msq, mapping = aes(x =Neuroticism )) + geom_histogram(binwidth = N
 #### Solutions for Central Tendency
 [Go back to questions](#practice-problems-for-central-tendency)
 
+
+#### Solutions for Descriptive Statistics
+[Go back to questions](#practice-problems-for-descriptive-statistics)
+
+_Problem 1_
+```r
+boxplot(Treatment$educ, ylab="Years of Education", main="Sample Education Levels")
+treatment_education_box <- boxplot(Treatment$educ, ylab="Years of Education", main="Sample Education Levels")
+treatment_education_box$out3
+# [1] 3 3 3 3 3 3 3 3 3 3 3 2 2 3 3 2 2 0 2 2 0 3 3 3 0
+```
+
+_Problem 2_:
+```r
+boxplot(Treatment$age, ylab="Age", main="Sample Ages")
+treatment_age_box <- boxplot(Treatment$age, ylab="Age", main="Sample Ages")
+treatment_age_box$stats
+# Miniumum: 17, Maximum: 55, Median: 32
+```
+
+_Problem 3_
+```r
+boxplot(Treatment$re74, Treatment$re75, Treatment$re78, ylab="Real Anual Earnings", 
+        names=c("1974", "1975", "1978"),main="Participant Earnings by Year")
+```
+
+_Problem 4_
+(a) 
+```r
+cohen.d(Treatment$re74, Treatment$re75)
+
+# Cohen's d
+#
+# d estimate: 0.02747125 (negligible)
+# 95 percent confidence interval:
+#      lower       upper 
+# -0.02613556  0.08107806 
+```
+(a) 
+```r
+cohen.d(Treatment$re74, Treatment$re78)
+
+# Cohen's d
+#
+# d estimate:  -0.1544946 (negligible)
+# 95 percent confidence interval:
+#      lower       upper 
+# -0.2081788 -0.1008104  
+```
+
+(a) 
+```r
+cohen.d(Treatment$re75, Treatment$re78)
+
+# Cohen's d
+#
+# d estimate: -0.179382 (negligible)
+# 95 percent confidence interval:
+#      lower       upper 
+# -0.233094 -0.125670
+```
+
+_Problem 5_:
+```r
+boxplot(Treatment$re78[which(Treatment$married=="TRUE")],Treatment$re78[which(Treatment$married=="FALSE")],
+        names= c("Married", "Not Married"), ylab="Real Annual Earnings", 
+        main="1978 Earnings of Married vs Unmarried participants")
+```
+
+_Problem 6_:
+```r
+cohen.d(Treatment$re78[which(Treatment$married=="TRUE")],Treatment$re78[which(Treatment$married=="FALSE")])
+# Cohen's d
+# 
+# d estimate: 0.5900193 (medium)
+# 95 percent confidence interval:
+#     lower     upper 
+# 0.4901954 0.6898432 
+```
