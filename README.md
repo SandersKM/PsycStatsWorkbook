@@ -516,7 +516,78 @@ _Problem 5_: Create a boxplot comparing 1978 participant earnings of those who a
 _Problem 6_: Calculate the Effect Size Index between 1978 participant earnings of those who are married and unmarried.
 
 
+## Correlation and Regression
+#### Tutorial for Correlation and Regression
 
+For this example, we will use the Mathlevel dataset again.
+```r
+library(carData)
+data("Davis")
+```
+Let's first learn more about this dataset.
+```r
+?Davis
+```
+
+Now, let's do a bit of visualization of the relationship of true and reported weight of participants.
+```r
+plot(Davis$weight, Davis$repwt, 
+     main="True and Reported Weight of 200 Participants", ylab="Reported Weight (kg)", xlab="True Weight (kg)")
+```
+
+In the bottom right, you will notice a data point that seems like a clear outlier. This data point was entered incorrectly, and might cause errors in our further analysis. Let's remove it from our analysis. 
+```r
+Davis <- Davis[which(Davis$weight < 160),] # Since the outlier is the only value with weight over 160 kg
+plot(Davis$weight, Davis$repwt, 
+     main="True and Reported Weight of 200 Participants", ylab="Reported Weight (kg)", xlab="True Weight (kg)")
+```
+
+Now, we can calculate the correlation coefficient, _r_. There are inbuilt methods for determining _r_, but we will use the Pearson method in this analysis. From this, we can simply produce the coefficient of determination _r^2_.
+```r
+r <- cor(Davis$weight, Davis$repwt,  use="complete.obs", method = "pearson")
+r
+# [1] 0.9858579
+r^2
+# [1] 0.9719157
+```
+
+This is a very strong coefficient of determination. Now let's create a linear regression model with these variables.
+```r
+linearModel <- lm(weight ~ repwt, data=Davis)
+print(linearModel)
+# Coefficients:
+# (Intercept)        repwt  
+#      2.7338       0.9584  
+```
+
+By printing the linear model, you get the intersept value and the slope of the regression line as coefficients. To get more information about the significance of this model, we use the summary() method. The column Pr(>|t|) gives the p-values for the coefficients.
+```r
+summary(linearModel)
+# Call:
+# lm(formula = weight ~ repwt, data = Davis)
+#
+# Residuals:
+#     Min      1Q  Median      3Q     Max 
+# -7.5296 -1.1010 -0.1322  1.1287  6.3891 
+#
+# Coefficients:
+#             Estimate Std. Error t value Pr(>|t|)    
+# (Intercept)  2.73380    0.81479   3.355 0.000967 ***
+# repwt        0.95837    0.01214  78.926  < 2e-16 ***
+# ---
+# Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+#
+# Residual standard error: 2.254 on 180 degrees of freedom
+#  (17 observations deleted due to missingness)
+# Multiple R-squared:  0.9719,	Adjusted R-squared:  0.9718 
+# F-statistic:  6229 on 1 and 180 DF,  p-value: < 2.2e-16
+```
+To visualize all of this, let's plot the regression line on our existing plot.
+```r
+plot(Davis$weight, Davis$repwt, 
+     main="True and Reported Weight of 200 Participants", ylab="Reported Weight", xlab="True Weight")
+abline(linearModel)
+```
 
 ## Solutions
 
