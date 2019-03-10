@@ -28,7 +28,7 @@ sd(Mathlevel$sat)
 means_language = Mathlevel %>% group_by(language) %>% summarize_at(vars(sat), funs(mean, sd))
 
 ggplot(means_language) +
-  geom_bar( aes(x=language, y=mean), stat="identity", fill="skyblue", alpha=0.7) + ylab("Mean SAT core") +
-  geom_errorbar( aes(x=language, ymin=mean-sd, ymax=mean+sd), width=0.4, colour="orange", alpha=0.9, size=1.3)
-
+  geom_bar( aes(x=language, y=mean), stat="identity", fill="skyblue", alpha=0.7)  +
+  geom_errorbar( aes(x=language, ymin=mean-sd, ymax=mean+sd), width=0.4, colour="orange", alpha=0.9, size=1.3)+
+  ylab("Mean SAT Score") + xlab("Foreign Language Proficiency ")
 

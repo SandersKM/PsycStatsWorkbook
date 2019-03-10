@@ -1,8 +1,8 @@
 {
-    "path" : "~/PsycStatsWorkbook/PsycStatsWorkbook/Descriptive_Statistics",
+    "path" : "~/PsycStatsWorkbook",
     "sortOrder" : [
         {
-            "ascending" : true,
+            "ascending" : false,
             "columnIndex" : 2
         }
     ]
