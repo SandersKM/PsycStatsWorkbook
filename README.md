@@ -7,20 +7,25 @@ Welcome to the wonderful world of R! This will one day be a proper introduction 
 
 ## RStudio Overview
 
+### Installation
+
 To download R Studio, go to the [official website](https://www.rstudio.com/products/rstudio/download/) and click the "DOWNLOAD" button under the free _RStudio Desktop Open Source License_ header. Then download the appropriate installer (not Zip/Tarball). Go through the standard installation instructions. 
 
-Once downloading has finished, open RStudo. We want to create a Project to store all of our code and data from this tutorial. First, to to _File -> New Project_. This will pop a dialog box with three options. Click the first option, _New Directory_. \
+## Creating a New Project
 
-![picture](/figures/createProject/createProject2.png)
+Once downloading has finished, open RStudo. We want to create a Project to store all of our code and data from this tutorial. First, to to _File -> New Project_. This will pop a dialog box with three options. Click the first option, _New Directory_. 
+
+![createProject](/figures/createProject/createProject2.png)
 
 Click the first option for Project Type, _New Project_. 
-<img src="https://github.com/SandersKM/PsycStatsWorkbook/blob/master/figures/createProject/createProject3.png"
-     alt="Select project type" width="50%" height="50%"
-     style="float: left; margin-right: 10px;" />
+![selectProject](figures/createProject/createProject3.png)
+
 RStudio will then ask you for a Directory Name. This will be the folder that stores all of your project files. Name the Directory "PsycStatsCode". 
-<img src="https://github.com/SandersKM/PsycStatsWorkbook/blob/master/figures/createProject/createProject4.png"
-     alt="Name Working Directory" width="50%" height="50%"
-     style="float: left; margin-right: 10px;" />
+![nameWorkingDir](figures/createProject/createProject4.png)
+
+## Creating a New R Script
+
+Great job! You should be in the console of your new project directory right now, like in the picture below. This is a good place to try out new functions or do simple math. However, if we want to run multiple lines of code at a time or save code for later, we need to create a new R Script (which is just a fancy word for file). Go to _File -> New File -> R Script_. This will give you an untitled script. Now go to _File -> Save As_ and save it as "RStudio_Overview".
 
 ## Common Error Messages
 
