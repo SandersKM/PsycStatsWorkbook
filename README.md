@@ -7,11 +7,11 @@ Welcome to the wonderful world of R! This will one day be a proper introduction 
 
 ## RStudio Overview
 
-### Installation
+__Installation__
 
 To download R Studio, go to the [official website](https://www.rstudio.com/products/rstudio/download/) and click the "DOWNLOAD" button under the free _RStudio Desktop Open Source License_ header. Then download the appropriate installer (not Zip/Tarball). Go through the standard installation instructions. 
 
-### Creating a New Project
+__Creating a New Project__
 
 Once downloading has finished, open RStudo. We want to create a Project to store all of our code and data from this tutorial. First, to to _File -> New Project_. This will pop a dialog box with three options. Click the first option, _New Directory_. 
 
@@ -23,11 +23,11 @@ Click the first option for Project Type, _New Project_.
 RStudio will then ask you for a Directory Name. This will be the folder that stores all of your project files. Name the Directory "PsycStatsCode". 
 ![nameWorkingDir](figures/createProject/createProject4.png)
 
-### Creating a New R Script
+__Creating a New R Script__
 
 Great job! You should be in the console of your new project directory right now, on the left side of your screen. This is a good place to try out new functions or do simple math. However, if we want to run multiple lines of code at a time or save code for later, we need to create a new R Script (which is just a fancy word for file). Go to _File -> New File -> R Script_. This will give you an untitled script. Now go to _File -> Save As_ and save it as "RStudio_Overview".
 
-### RStudio Windows
+__RStudio Windows__
 
 RStudio should now be divided into 4 widows:
 1. _File View_ (Top Left)
@@ -39,7 +39,7 @@ RStudio should now be divided into 4 widows:
 4. _Files/Plots/Help_ (Bottom Right)
 * There is a lot going on here. On the _File_ tab, you can see all of the files in your current project directory. You can click on a file to open it in _File View_. We will also use the _Plot_ tab to display plots and the _Help_ tab to see documenation for packages we use.
 
-### Run vs Source
+__Run vs Source__
 
 Inside of "RStudio_Overview", type the following lines:
 ```r
@@ -48,13 +48,13 @@ Inside of "RStudio_Overview", type the following lines:
 ```
 Put your cursor on the first line. Press _Run_ at the top right of the _File View_ window. In your _Console_, you will see that your first line ran. I use _Run_ when I only want to use a few lines of my code at a time.
 
-![run](#figures/createProject/run.png)
+![run](figures/createProject/run.png)
 
 Now, press _Source_ at the top right of the _File View_ window. In your console, you will see that it ran all of the code in your file at the same time. I use _Source_ when I want to run my whole Script at the same time.
 
-![source](#figures/createProject/source.png)
+![source](figures/createProject/source.png)
 
-## R Basics
+__R Basics__
 
 
 
