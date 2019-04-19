@@ -1,22 +1,26 @@
 # Psychology R Statistics Workbook 
 #### Problems and Solutions in R by Kate Sanders
 
-## Table of Contents
-1. [Introduction](#introduction)
-2. [Frequency Distributions](#frequency-distributions)
-3. [Central Tendency](#central-tendency)
-4. [Variability](#variability)
-5. [Solutions](#solutions)
-
 ## Introduction 
 
 Welcome to the wonderful world of R! This will one day be a proper introduction :)
 
 ## RStudio Overview
 
-To download R Studio, go to the [official website](https://www.rstudio.com/products/rstudio/download/) and click the "DOWNLOAD" button under the free _RStudio Desktop Open Source License_ header. Then download the appropriate installer (not Zip/Tarball).
+To download R Studio, go to the [official website](https://www.rstudio.com/products/rstudio/download/) and click the "DOWNLOAD" button under the free _RStudio Desktop Open Source License_ header. Then download the appropriate installer (not Zip/Tarball). Go through the standard installation instructions. 
 
-
+Once downloading has finished, open RStudo. We want to create a Project to store all of our code and data from this tutorial. First, to to _File -> New Project_. This will pop a dialog box with three options. Click the first option, _New Directory_. 
+<img src="https://github.com/SandersKM/PsycStatsWorkbook/blob/master/figures/createProject/createProject2.png"
+     alt="Project options"
+     style="float: left; margin-right: 10px;" />
+Click the first option for Project Type, _New Project_. 
+<img src="https://github.com/SandersKM/PsycStatsWorkbook/blob/master/figures/createProject/createProject3.png"
+     alt="Select project type"
+     style="float: left; margin-right: 10px;" />
+RStudio will then ask you for a Directory Name. This will be the folder that stores all of your project files. Name the Directory "PsycStatsCode". 
+<img src="https://github.com/SandersKM/PsycStatsWorkbook/blob/master/figures/createProject/createProject4.png"
+     alt="Name Working Directory"
+     style="float: left; margin-right: 10px;" />
 
 ## Common Error Messages
 
