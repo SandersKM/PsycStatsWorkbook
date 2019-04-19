@@ -46,7 +46,13 @@ Inside of "RStudio_Overview", type the following lines:
 1 + 1
 2 + 2
 ```
-Put your cursor on the first line. Press Run at the top right of the window
+Put your cursor on the first line. Press _Run_ at the top right of the _File View_ window. In your _Console_, you will see that your first line ran. I use _Run_ when I only want to use a few lines of my code at a time.
+
+![run](#figures/createProject/run.png)
+
+Now, press _Source_ at the top right of the _File View_ window. In your console, you will see that it ran all of the code in your file at the same time. I use _Source_ when I want to run my whole Script at the same time.
+
+![source](#figures/createProject/source.png)
 
 ## R Basics
 
