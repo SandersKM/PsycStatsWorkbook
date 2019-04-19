@@ -11,15 +11,15 @@ To download R Studio, go to the [official website](https://www.rstudio.com/produ
 
 Once downloading has finished, open RStudo. We want to create a Project to store all of our code and data from this tutorial. First, to to _File -> New Project_. This will pop a dialog box with three options. Click the first option, _New Directory_. 
 <img src="https://github.com/SandersKM/PsycStatsWorkbook/blob/master/figures/createProject/createProject2.png"
-     alt="Project options"
+     alt="Project options" width="50%" height="50%"
      style="float: left; margin-right: 10px;" />
 Click the first option for Project Type, _New Project_. 
 <img src="https://github.com/SandersKM/PsycStatsWorkbook/blob/master/figures/createProject/createProject3.png"
-     alt="Select project type"
+     alt="Select project type" width="50%" height="50%"
      style="float: left; margin-right: 10px;" />
 RStudio will then ask you for a Directory Name. This will be the folder that stores all of your project files. Name the Directory "PsycStatsCode". 
 <img src="https://github.com/SandersKM/PsycStatsWorkbook/blob/master/figures/createProject/createProject4.png"
-     alt="Name Working Directory"
+     alt="Name Working Directory" width="50%" height="50%"
      style="float: left; margin-right: 10px;" />
 
 ## Common Error Messages
