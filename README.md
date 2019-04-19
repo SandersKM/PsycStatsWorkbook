@@ -31,13 +31,13 @@ Great job! You should be in the console of your new project directory right now,
 
 RStudio should now be divided into 4 widows:
 1. _File View_ (Top Left)
-..* You can view Scripts and data files here
+* You can view Scripts and data files here
 2. _Console_ (Bottom Left) 
-..* This is the console you were typing in a minute ago. Its a great place to small a line of code before you put it in your Script.
+* This is the console you were typing in a minute ago. Its a great place to small a line of code before you put it in your Script.
 3. _Environment_ (Top Right)
-..* Later, we will be creating lots of variables and storing data files. This tab will show you the variables and datasets that you have used. 
+* Later, we will be creating lots of variables and storing data files. This tab will show you the variables and datasets that you have used. 
 4. _Files/Plots/Help_ (Bottom Right)
-..* There is a lot going on here. On the _File_ tab, you can see all of the files in your current project directory. You can click on a file to open it in _File View_. We will also use the _Plot_ tab to display plots and the _Help_ tab to see documenation for packages we use.
+* There is a lot going on here. On the _File_ tab, you can see all of the files in your current project directory. You can click on a file to open it in _File View_. We will also use the _Plot_ tab to display plots and the _Help_ tab to see documenation for packages we use.
 
 ### Run vs Source
 
