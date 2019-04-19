@@ -11,7 +11,7 @@ Welcome to the wonderful world of R! This will one day be a proper introduction 
 
 To download R Studio, go to the [official website](https://www.rstudio.com/products/rstudio/download/) and click the "DOWNLOAD" button under the free _RStudio Desktop Open Source License_ header. Then download the appropriate installer (not Zip/Tarball). Go through the standard installation instructions. 
 
-## Creating a New Project
+### Creating a New Project
 
 Once downloading has finished, open RStudo. We want to create a Project to store all of our code and data from this tutorial. First, to to _File -> New Project_. This will pop a dialog box with three options. Click the first option, _New Directory_. 
 
@@ -23,9 +23,34 @@ Click the first option for Project Type, _New Project_.
 RStudio will then ask you for a Directory Name. This will be the folder that stores all of your project files. Name the Directory "PsycStatsCode". 
 ![nameWorkingDir](figures/createProject/createProject4.png)
 
-## Creating a New R Script
+### Creating a New R Script
 
-Great job! You should be in the console of your new project directory right now, like in the picture below. This is a good place to try out new functions or do simple math. However, if we want to run multiple lines of code at a time or save code for later, we need to create a new R Script (which is just a fancy word for file). Go to _File -> New File -> R Script_. This will give you an untitled script. Now go to _File -> Save As_ and save it as "RStudio_Overview".
+Great job! You should be in the console of your new project directory right now, on the left side of your screen. This is a good place to try out new functions or do simple math. However, if we want to run multiple lines of code at a time or save code for later, we need to create a new R Script (which is just a fancy word for file). Go to _File -> New File -> R Script_. This will give you an untitled script. Now go to _File -> Save As_ and save it as "RStudio_Overview".
+
+### RStudio Windows
+
+RStudio should now be divided into 4 widows:
+1. _File View_ (Top Left)
+..* You can view Scripts and data files here
+2. _Console_ (Bottom Left) 
+..* This is the console you were typing in a minute ago. Its a great place to small a line of code before you put it in your Script.
+3. _Environment_ (Top Right)
+..* Later, we will be creating lots of variables and storing data files. This tab will show you the variables and datasets that you have used. 
+4. _Files/Plots/Help_ (Bottom Right)
+..* There is a lot going on here. On the _File_ tab, you can see all of the files in your current project directory. You can click on a file to open it in _File View_. We will also use the _Plot_ tab to display plots and the _Help_ tab to see documenation for packages we use.
+
+### Run vs Source
+
+Inside of "RStudio_Overview", type the following lines:
+```r
+1 + 1
+2 + 2
+```
+Put your cursor on the first line. Press Run at the top right of the window
+
+## R Basics
+
+
 
 ## Common Error Messages
 
