@@ -10,6 +10,16 @@
 
 ## Introduction 
 
+Welcome to the wonderful world of R! This will one day be a proper introduction :)
+
+## RStudio Overview
+
+To download R Studio, go to the [official website](https://www.rstudio.com/products/rstudio/download/) and click the "DOWNLOAD" button under the free _RStudio Desktop Open Source License_ header. Then download the appropriate installer (not Zip/Tarball).
+
+
+
+## Common Error Messages
+
 #### I got an error message. How do I fix it?
 
 ##### No Package
