@@ -56,7 +56,7 @@ Now, press _Source_ at the top right of the _File View_ window. In your console,
 
 __R Basics__
 
-
+put this before the installation. Why use R rather than SPSS and Excel. Develop a schema for what R is and what you can do with it. Put the datacamp stuff in here so they can code before putting it into R Studio. 
 
 ## Common Error Messages
 
